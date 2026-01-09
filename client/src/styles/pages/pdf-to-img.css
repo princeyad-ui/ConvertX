@@ -1,0 +1,70 @@
+.pdf-to-img-container {
+  padding: 40px;
+  min-height: 100vh;
+  color: white;
+}
+
+.pdf-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Upload Box */
+.upload-box {
+  width: 300px;
+  height: 120px;
+  margin: 0 auto 30px auto;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+}
+
+.upload-box:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Results Grid */
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Image Card */
+.img-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 15px;
+  width: 260px;
+  text-align: center;
+}
+
+.img-box img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background: #6a5fff;
+}

@@ -1,0 +1,103 @@
+.merge-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+}
+
+/* Title */
+.merge-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Upload Box */
+.upload-box {
+  width: 400px;
+  height: 150px;
+  margin: 0 auto 40px auto;
+
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.upload-box:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.upload-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* PDF List */
+.pdf-list {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* PDF Item */
+.pdf-item {
+  padding: 15px 20px;
+
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  color: white;
+
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: grab;
+  transition: 0.3s ease;
+  font-size: 17px;
+}
+
+.pdf-item:active {
+  cursor: grabbing;
+}
+
+.drag-icon {
+  font-size: 22px;
+  opacity: 0.8;
+}
+
+/* Merge Button */
+.merge-btn {
+  margin-top: 30px;
+  padding: 14px 35px;
+  font-size: 18px;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  border: none;
+  color: white;
+
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.merge-btn:hover {
+  opacity: 0.9;
+}

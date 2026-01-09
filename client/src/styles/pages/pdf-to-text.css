@@ -1,0 +1,124 @@
+.text-container {
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Title */
+.text-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Upload box */
+.text-upload {
+  width: 400px;
+  height: 150px;
+  margin: 0 auto 40px auto;
+
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.text-upload:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.text-upload input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Loading text */
+.loading {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #38bdf8;
+}
+
+/* Output text box */
+.text-output {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.text-output textarea {
+  width: 100%;
+  height: 350px;
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+
+  color: white;
+  resize: none;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Download Button */
+.download-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+
+  background: #3b82f6;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #60a5fa;
+}
+/* Converter box responsive */
+@media (max-width: 600px) {
+
+  .text-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .text-title {
+    font-size: 24px;
+  }
+
+  .text-upload {
+    padding: 20px;
+  }
+
+  .download-btn,
+  .convert-btn {
+    padding: 12px 12px;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .loading {
+    font-size: 15px;
+  }
+}

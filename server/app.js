@@ -1,0 +1,41 @@
+const express = require("express");
+const cors = require("cors");
+const multer = require("multer");
+const { exec } = require("child_process");
+const path = require("path");
+
+const app = express();
+app.use(cors());
+
+const storage = multer.diskStorage({
+  destination: "uploads/",
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname); 
+    cb(null, Date.now() + ext);
+  },
+});
+
+const upload = multer({ storage });
+
+
+
+app.post("/convert", upload.single("pdf"), (req, res) => {
+  const pdfPath = req.file.path;
+  const outputPath = `output/${Date.now()}.docx`;
+
+  const command = `python pdf_to_word.py "${pdfPath}" "${outputPath}"`;
+
+  exec(command, (err, stdout, stderr) => {
+    console.log("OUTPUT:", stdout);
+
+    if (stdout.includes("SUCCESS")) {
+      res.download(outputPath, "converted.docx");
+    } else {
+      res.status(500).json({ error: "Conversion failed", details: stdout });
+    }
+  });
+});
+
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
+});
