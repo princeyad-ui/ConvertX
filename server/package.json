@@ -1,15 +1,10 @@
 {
-  "name": "server",
+  "name": "convertx-backend",
   "version": "1.0.0",
-  "description": "ConvertX backend",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.2.1",

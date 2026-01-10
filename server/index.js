@@ -3,9 +3,15 @@ const cors = require("cors");
 const multer = require("multer");
 const { exec } = require("child_process");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 app.use(cors());
+app.use(express.json());
+
+// Ensure uploads & output folders exist
+if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
+if (!fs.existsSync("output")) fs.mkdirSync("output");
 
 const storage = multer.diskStorage({
   destination: "uploads/",
@@ -14,14 +20,15 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + ext);
   },
 });
+
 const upload = multer({ storage });
 
-// ---------------- PDF TO WORD ----------------
+// ---------------- PDF → WORD ----------------
 app.post("/convert", upload.single("pdf"), (req, res) => {
   const pdfPath = req.file.path;
   const outputPath = `output/${Date.now()}.docx`;
 
-  const command = `python pdf_to_word.py "${pdfPath}" "${outputPath}"`;
+  const command = `python3 pdf_to_word.py "${pdfPath}" "${outputPath}"`;
 
   exec(command, (err, stdout, stderr) => {
     console.log("OUTPUT:", stdout);
@@ -34,12 +41,12 @@ app.post("/convert", upload.single("pdf"), (req, res) => {
   });
 });
 
-// ---------------- DOCX TO PDF ----------------
+// ---------------- DOCX → PDF ----------------
 app.post("/docx-to-pdf", upload.single("docx"), (req, res) => {
   const docxPath = req.file.path;
   const outputPath = `output/${Date.now()}.pdf`;
 
-  const command = `python docx_to_pdf.py "${docxPath}" "${outputPath}"`;
+  const command = `python3 docx_to_pdf.py "${docxPath}" "${outputPath}"`;
 
   exec(command, (err, stdout, stderr) => {
     console.log("OUTPUT:", stdout);
@@ -52,8 +59,10 @@ app.post("/docx-to-pdf", upload.single("docx"), (req, res) => {
   });
 });
 
-// ---------------- START SERVER ----------------
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log("Server running on port " + port);
+// ---------------- SERVER START (REPLIT MODE) ----------------
+const port = process.env.PORT || 3000;
+const host = "0.0.0.0";
+
+app.listen(port, host, () => {
+  console.log("Server running at http://" + host + ":" + port);
 });

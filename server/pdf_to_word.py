@@ -1,13 +1,14 @@
 import sys
 from pdf2docx import Converter
 
-pdf_path = sys.argv[1]
-docx_path = sys.argv[2]
-
 try:
-    cv = Converter(pdf_path)
-    cv.convert(docx_path)
+    pdf = sys.argv[1]
+    docx = sys.argv[2]
+
+    cv = Converter(pdf)
+    cv.convert(docx)
     cv.close()
+
     print("SUCCESS")
 except Exception as e:
-    print("ERROR:", str(e))
+    print("ERROR:", e)
