@@ -39,24 +39,25 @@ ConvertX is a modern, fast, and user-friendly web application that provides mult
 
 ---
 
-# 📂 Folder Structure
+## 📁 Folder Structure
 
 ConvertX/
-│
-├── client/ # React frontend
+│── client/ # React frontend
 │ ├── src/
 │ ├── public/
 │ └── vite.config.js
 │
-├── server/ # Node backend
+│── server/ # Node backend
 │ ├── index.js
 │ ├── convert.js
 │ ├── routes/
 │ ├── uploads/
 │ └── output/
 │
-├── README.md
-└── package.json
+│── README.md
+│── package.json
+
+
 
 🙌 Author
 
