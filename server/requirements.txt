@@ -1,4 +1,0 @@
-pypandoc
-python-docx
-reportlab
-PyMuPDF

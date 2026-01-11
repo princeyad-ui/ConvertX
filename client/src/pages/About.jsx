@@ -22,8 +22,7 @@ export default function About() {
 
         <h2>✨ Features</h2>
         <ul>
-          <li>📄 PDF → Word (High accuracy conversion)</li>
-          <li>📝 DOCX → PDF conversion</li>
+          
           <li>🔤 PDF → Text and OCR Extractor</li>
           <li>🖼 PDF → Image Converter</li>
           <li>🖼 Image → PDF Converter</li>

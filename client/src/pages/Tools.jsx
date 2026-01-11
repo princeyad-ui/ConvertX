@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Tools() {
   const tools = [
-    { name: "PDF → Word", path: "/pdf-to-word" },
-    { name: "DOCX → PDF", path: "/docx-to-pdf" },
+  
     { name: "PDF → Text", path: "/pdf-to-text" },
     { name: "PDF → Text OCR", path: "/pdf-to-text-ocr" },
     { name: "PDF → Image", path: "/pdf-to-img" },

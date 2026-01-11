@@ -15,8 +15,7 @@ export default function Home() {
         <ToolCard title="Compress PDF"link="/compress-pdf" />
         <ToolCard title="PDF to Text"link="/pdf-to-text" />
         <ToolCard title="PDF to OCRText"link="/pdf-to-text-ocr" />
-        <ToolCard title="PDF to Word "link="/pdf-to-word" />
-        <ToolCard title="DocxToPdf"link="/docx-to-pdf"  />
+       
       </div>
     </div>
   );
