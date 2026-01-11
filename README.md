@@ -40,7 +40,7 @@ ConvertX is a modern, fast, and user-friendly web application that provides mult
 ---
 
 ## 📁 Folder Structure
-
+```
 ConvertX/
 │── client/ # React frontend
 │ ├── src/
@@ -56,7 +56,7 @@ ConvertX/
 │
 │── README.md
 │── package.json
-
+```
 
 
 🙌 Author
